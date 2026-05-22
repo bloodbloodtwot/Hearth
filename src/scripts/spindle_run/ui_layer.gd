@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-# UI Layer - Updated to include game over screen
+# UI Layer - Updated with dash and combo displays
 
 class_name UILayer
 
@@ -8,25 +8,39 @@ class_name UILayer
 @onready var combo_label = $HUD/ComboLabel
 @onready var speed_label = $HUD/SpeedLabel
 @onready var health_label = $HUD/HealthLabel
+@onready var dash_label = Label.new()
 
 var game_over_label: Label = null
 
 func _ready():
-	update_hud(0, 0, 10, 3)
+	# Create dash label
+	dash_label.add_theme_font_size_override("font_size", 20)
+	dash_label.text = "Dashes: ⬤ ⬤"
+	dash_label.anchor_left = 0.0
+	dash_label.anchor_top = 0.0
+	dash_label.offset_left = 20.0
+	dash_label.offset_top = 180.0
+	dash_label.offset_right = 200.0
+	dash_label.offset_bottom = 210.0
+	$HUD.add_child(dash_label)
+	
+	update_hud(0, "", 10, 3, "⬤ ⬤")
 
-func update_hud(score: int, combo: int, speed: int, health: int):
-	"""Update all HUD elements"""
+func update_hud(score: int, combo_text: String, speed: int, health: int, dash_display: String):
+	"""Update HUD"""
 	if score_label:
 		score_label.text = "Score: %d" % score
 	if combo_label:
-		combo_label.text = "Combo: %d" % combo
+		combo_label.text = combo_text if combo_text != "" else "Combo: 0"
 	if speed_label:
 		speed_label.text = "Speed: %d" % speed
 	if health_label:
 		health_label.text = "Health: %d/3" % health
+	if dash_label:
+		dash_label.text = "Dashes: %s" % dash_display
 
 func show_game_over(final_score: int):
-	"""Display game over screen"""
+	"""Game over screen"""
 	if not game_over_label:
 		game_over_label = Label.new()
 		game_over_label.add_theme_font_size_override("font_size", 48)
