@@ -1,23 +1,47 @@
-## Core Systems - Iteration 1 Focus
+## Hearth - The Hub System (Phase 3)
 
-### Spindle Run: Braidway Lane System
+Building the central hub where the player customizes their world, manages NPCs, and accesses different realms.
 
-The most fundamental gameplay loop. You exist in a 3-lane ribbon flowing forward infinitely.
+### Heartstone Interface
+The Heartstone is the central entity that manages:
+- Realm access (Star Loom portals)
+- Building plots on the island
+- NPC management
+- Lumen economy
 
-**Key Mechanics:**
-1. **Lane Switching** - Player can move left/middle/right
-2. **Obstacles** - Hazards spawn in lanes, must dodge
-3. **Lumen Collection** - Glowing orbs restore health/score
-4. **Speed Ramping** - Game gets faster as you progress
-5. **Combo System** - Reward consecutive dodges
+### Basic Building System
+- Tile-based terrain
+- Material selection (wool, silk, velvet, etc.)
+- Seam customization
+- Height morphing
 
-**Iteration 1 Goals:**
-- [ ] 3-lane system with camera following path
-- [ ] Player controller (WASD or arrow keys)
-- [ ] Static obstacles in lanes
-- [ ] Lumen orbs spawning
-- [ ] Basic scoring
-- [ ] Game-over state
+### Realm System
+Nine realms accessible via Star Loom portals:
+1. **Elysian Fields** - Peaceful pastoral
+2. **Emberweave** - Hot volcanic
+3. **Frostspun** - Cold crystalline
+4. **Verdant Tapestry** - Jungle
+5. **Golden Braid** - Clockwork
+6. **Astral Silk** - Cosmic
+7. **Unspooled Deep** - Abyssal
+8. **Sundered Shores** - Liminal
+9. **Loom's Edge** - Endgame
 
-**Priority: Build this first** - Once players can move and dodge, everything else builds on top.
+### NPC System
+- Spindlekin villagers with daily schedules
+- Friendship mechanics (10 levels)
+- Gift preferences
+- Unique dialogue trees
 
+### Customization
+- **Cloak Loom** - Design custom cloaks
+- **Dye System** - Natural dye colors
+- **Button Eyes** - 100+ eye variants
+- **Accessories** - Cosmetic charms
+
+### Next Steps (Iterations 101-150)
+1. Create Hearth scene with basic terrain
+2. Implement Heartstone UI
+3. Build first realm (Elysian Fields)
+4. Add basic NPC spawning
+5. Create Cloak Loom interface
